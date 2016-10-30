@@ -14,7 +14,7 @@ api.get('/hello', (req, res) => res.send({hello: 'world'}))
 /*
 create a task, update a task, delete a task?, could get a task by id
 */
-api.get('/tasks:id', function(req, res, next) {
+api.get('/tasks/:id', function(req, res, next) {
 	Task.findById(req.params.id)
 	.then(task => res.send(task))
 	.catch(next)
@@ -34,25 +34,25 @@ api.post('/tasks', function(req, res, next) {
 })
 
 //update name, dueDate, priority, or status
-//for now only allows updating name or priority in crude way
+//for now only allows updating name or status in crude way
 api.put('/tasks/:id', function(req, res, next) {
 	if (req.body.name) {
 		Task.update({
-			where: {
-				id: req.params.id
-			},
 			name: req.body.name
-		})
+		}, {
+			where: {id: req.params.id}
+			}
+		)
 		.then(updatedTask => res.send(updatedTask))
 		.catch(next)
 	}
-	if (req.body.priority) {
+	if (req.body.status) {
 		Task.update({
-			where: {
-				id: req.params.id
-			},
-			priority: req.body.priority
-		})
+			status: req.body.status
+		}, {
+			where: {id: req.params.id}
+			}
+		)
 		.then(updatedTask => res.send(updatedTask))
 		.catch(next)
 	}
