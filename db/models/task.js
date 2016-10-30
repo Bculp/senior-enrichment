@@ -7,7 +7,7 @@ module.exports = db.define('task', {
 		allowNull: false
 	},
 	dueDate: {
-		type: Sequelize.DATE
+		type: Sequelize.DATEONLY
 	},
 	priority: {
 		type: Sequelize.ENUM('normal', 'high'),

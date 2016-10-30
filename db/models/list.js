@@ -20,7 +20,7 @@ module.exports = db.define('list', {
   },
   dateCreated: {
   	type: Sequelize.DATE,
-  	defaultValue: Date.now()
+  	defaultValue: Sequelize.NOW
   }
   //length or numbers of tasks associated
 
