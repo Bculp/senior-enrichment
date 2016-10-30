@@ -1,7 +1,7 @@
 {
-  "name": "asdf",
+  "name": "Tasklist",
   "version": "0.0.1",
-  "description": "A happy little skeleton.",
+  "description": "A task list app similar to Wunderlist.com",
   "main": "index.js",
   "scripts": {
     "test": "mocha **/*.test.js *.test.js",
@@ -18,7 +18,7 @@
     "redux",
     "skeleton"
   ],
-  "author": "Ashi Krishnan <me@ashi.works>",
+  "author": "Brandon C",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/queerviolet/bones/issues"
