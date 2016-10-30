@@ -31,6 +31,12 @@ module.exports = app
   // Send index.html for anything else.
   .get('/*', (_, res) => res.sendFile(resolve(__dirname, '..', 'public', 'index.html')))
 
+  //I added error handling
+  .use(function(err, req, res, next) {
+    if (err.message) res.send(err.message);
+    else res.sendStatus(500)
+  })
+
 if (module === require.main) {
   // Start listening only if we're the main module.
   // 
